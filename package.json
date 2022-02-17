@@ -1,0 +1,22 @@
+{
+  "name": "redis_session",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kim Jeong Kyun",
+  "license": "ISC",
+  "dependencies": {
+    "connect-redis": "^6.1.1",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "redis": "^3.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
