@@ -1,7 +1,3 @@
 express-session + redis3
 
-
-
-npm install express-session
-npm install connect-redis
-npm install redis@3
+npm install express-session connect-redis redis@3
