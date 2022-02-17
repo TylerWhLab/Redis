@@ -84,11 +84,27 @@ app.get('/login/:credential', function(req, res) {
      */
 });
 
+app.get('/auth', (req, res) => {
+    if (req.session.sessionKey) {
+        res.status(200).json({
+            success: true,
+            msg: 'login ok'
+        })
+    } else {
+        res.status(200).json({
+            success: false,
+            msg: 'auth fail'
+        })
+    }
+})
+
 app.get('/logout', function(req, res) {
-    req.session.destroy((err) => { // 세션 dictionary 자체를 삭제
-        if(err) res.send('session destroy fail')
-        res.send('session destroy success')
-    })
+    if (req.session.sessionKey) {
+        req.session.destroy((err) => { // 세션 dictionary 자체를 삭제
+            if(err) res.send('session destroy fail')
+            res.send('session destroy success')
+        })
+    }
 });
 
 // 7777 포트에서 app 실행
